@@ -166,8 +166,15 @@ app.MapPost("/api/scheduler/change", (HttpRequest req, ProcessManager pm, EventL
             if (quantum <= 0) quantum = 3;
             newScheduler = new RoundRobinScheduler(quantum, log);
             break;
+        case "sjf":
+            newScheduler = new SJFScheduler(log);
+            break;
+        case "priority":
+        case "prioridades":
+            newScheduler = new PriorityScheduler(log);
+            break;
         default:
-            return Results.BadRequest(new { error = $"Algoritmo '{algo}' no reconocido. Use 'fcfs' o 'rr'." });
+            return Results.BadRequest(new { error = $"Algoritmo '{algo}' no reconocido. Use 'fcfs', 'rr', 'sjf' o 'priority'." });
     }
 
     pm.ChangeScheduler(newScheduler);

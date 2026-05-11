@@ -16,6 +16,8 @@ namespace SimuladorGestorProcesos.Core
     /// Implementaciones disponibles:
     /// - <see cref="FCFSScheduler"/>: First Come, First Served (FIFO)
     /// - <see cref="RoundRobinScheduler"/>: Round Robin con quantum configurable
+    /// - <see cref="SJFScheduler"/>: Shortest Job First (non-preemptive)
+    /// - <see cref="PriorityScheduler"/>: Prioridades (menor número = mayor prioridad)
     /// </summary>
     public interface IScheduler
     {

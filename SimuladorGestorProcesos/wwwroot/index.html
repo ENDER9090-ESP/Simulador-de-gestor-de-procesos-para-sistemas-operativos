@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulador de Gestor de Procesos</title>
     <meta name="description" content="Dashboard web para el simulador de gestión de procesos de un sistema operativo">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header id="header">
         <div class="header-content">
@@ -54,8 +58,10 @@
                         <div class="form-field" style="flex: 2;">
                             <label for="sel-algo">Algoritmo</label>
                             <select id="sel-algo" onchange="toggleQuantumField()">
-                                <option value="fcfs">FCFS (First Come, First Served)</option>
-                                <option value="rr">Round Robin</option>
+                                <option value="fcfs">1. FCFS (First Come, First Served)</option>
+                                <option value="rr">2. Round Robin</option>
+                                <option value="sjf">3. SJF (Shortest Job First)</option>
+                                <option value="priority">4. Prioridades</option>
                             </select>
                         </div>
                         <div class="form-field" id="quantum-field" style="display: none;">
@@ -179,4 +185,5 @@
 
     <script src="app.js"></script>
 </body>
+
 </html>
