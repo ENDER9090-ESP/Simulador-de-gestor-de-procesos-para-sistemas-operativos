@@ -1,0 +1,77 @@
+{
+  "Version": 1,
+  "Hash": "DHjeZJrOF6ApVjI2bBb9oh+HYhF7XAZLD2Ec83ldgI4=",
+  "Source": "SimuladorGestorProcesos",
+  "BasePath": "_content/SimuladorGestorProcesos",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "SimuladorGestorProcesos\\wwwroot",
+      "Source": "SimuladorGestorProcesos",
+      "ContentRoot": "C:\\Users\\josea\\Downloads\\Simulador de gestor de procesos para sistemas operativos\\SimuladorGestorProcesos\\wwwroot\\",
+      "BasePath": "_content/SimuladorGestorProcesos",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\josea\\Downloads\\Simulador de gestor de procesos para sistemas operativos\\SimuladorGestorProcesos\\wwwroot\\app.js",
+      "SourceId": "SimuladorGestorProcesos",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\josea\\Downloads\\Simulador de gestor de procesos para sistemas operativos\\SimuladorGestorProcesos\\wwwroot\\",
+      "BasePath": "_content/SimuladorGestorProcesos",
+      "RelativePath": "app.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\app.js"
+    },
+    {
+      "Identity": "C:\\Users\\josea\\Downloads\\Simulador de gestor de procesos para sistemas operativos\\SimuladorGestorProcesos\\wwwroot\\index.html",
+      "SourceId": "SimuladorGestorProcesos",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\josea\\Downloads\\Simulador de gestor de procesos para sistemas operativos\\SimuladorGestorProcesos\\wwwroot\\",
+      "BasePath": "_content/SimuladorGestorProcesos",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\josea\\Downloads\\Simulador de gestor de procesos para sistemas operativos\\SimuladorGestorProcesos\\wwwroot\\styles.css",
+      "SourceId": "SimuladorGestorProcesos",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\josea\\Downloads\\Simulador de gestor de procesos para sistemas operativos\\SimuladorGestorProcesos\\wwwroot\\",
+      "BasePath": "_content/SimuladorGestorProcesos",
+      "RelativePath": "styles.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\styles.css"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\josea\\Downloads\\Simulador de gestor de procesos para sistemas operativos\\SimuladorGestorProcesos\\wwwroot\\app.js",
+      "PackagePath": "staticwebassets\\app.js"
+    },
+    {
+      "Id": "C:\\Users\\josea\\Downloads\\Simulador de gestor de procesos para sistemas operativos\\SimuladorGestorProcesos\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\josea\\Downloads\\Simulador de gestor de procesos para sistemas operativos\\SimuladorGestorProcesos\\wwwroot\\styles.css",
+      "PackagePath": "staticwebassets\\styles.css"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.SimuladorGestorProcesos.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.SimuladorGestorProcesos.props",
+      "PackagePath": "build\\SimuladorGestorProcesos.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.SimuladorGestorProcesos.props",
+      "PackagePath": "buildMultiTargeting\\SimuladorGestorProcesos.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.SimuladorGestorProcesos.props",
+      "PackagePath": "buildTransitive\\SimuladorGestorProcesos.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

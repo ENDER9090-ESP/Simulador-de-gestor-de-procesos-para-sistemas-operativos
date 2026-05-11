@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Gestor de Procesos</title>
+    <meta name="description" content="Dashboard web para el simulador de gestión de procesos de un sistema operativo">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <div class="header-left">
+                <div class="logo-icon">⚙</div>
+                <div>
+                    <h1>Simulador de Gestor de Procesos</h1>
+                    <p class="subtitle">Dashboard de Control — Sistema Operativo Simulado</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="stat-pill" id="cycle-pill">
+                    <span class="stat-label">Ciclo</span>
+                    <span class="stat-value" id="cycle-count">0</span>
+                </div>
+                <div class="stat-pill" id="active-pill">
+                    <span class="stat-label">Activos</span>
+                    <span class="stat-value" id="active-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="dashboard">
+        <!-- ── Panel de Control ────────────────────────────── -->
+        <section class="panel control-panel" id="control-panel">
+            <div class="panel-header">
+                <h2>🎮 Panel de Control</h2>
+            </div>
+            <div class="panel-body">
+                <div class="control-group">
+                    <h3>Simulación</h3>
+                    <button id="btn-tick" class="btn btn-primary btn-lg" onclick="doTick()">
+                        ▶ Avanzar Ciclo (Tick)
+                    </button>
+                    <button id="btn-auto" class="btn btn-accent" onclick="toggleAutoTick()">
+                        ⏩ Auto-Tick: OFF
+                    </button>
+                </div>
+
+                <div class="control-group">
+                    <h3>Algoritmo de Planificación</h3>
+                    <div class="form-row">
+                        <div class="form-field" style="flex: 2;">
+                            <label for="sel-algo">Algoritmo</label>
+                            <select id="sel-algo" onchange="toggleQuantumField()">
+                                <option value="fcfs">FCFS (First Come, First Served)</option>
+                                <option value="rr">Round Robin</option>
+                            </select>
+                        </div>
+                        <div class="form-field" id="quantum-field" style="display: none;">
+                            <label for="inp-quantum">Quantum</label>
+                            <input type="number" id="inp-quantum" value="3" min="1" max="50">
+                        </div>
+                    </div>
+                    <button id="btn-change-algo" class="btn btn-accent" onclick="changeScheduler()">
+                        🔄 Cambiar Algoritmo
+                    </button>
+                </div>
+
+                <div class="control-group">
+                    <h3>Crear Proceso</h3>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="inp-prioridad">Prioridad</label>
+                            <input type="number" id="inp-prioridad" value="5" min="0" max="10">
+                        </div>
+                        <div class="form-field">
+                            <label for="inp-memoria">RAM (MB)</label>
+                            <input type="number" id="inp-memoria" value="256" min="1" max="4096">
+                        </div>
+                        <div class="form-field">
+                            <label for="inp-burst">Burst (ms)</label>
+                            <input type="number" id="inp-burst" value="5" min="1" max="100">
+                        </div>
+                    </div>
+                    <button id="btn-create" class="btn btn-success" onclick="createProcess()">
+                        + Crear Proceso
+                    </button>
+                </div>
+
+                <div class="control-group">
+                    <h3>Demos</h3>
+                    <button id="btn-demo-pc" class="btn btn-demo" onclick="launchProducerConsumer()">
+                        🔄 Productor / Consumidor
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Panel de Recursos ───────────────────────────── -->
+        <section class="panel resource-panel" id="resource-panel">
+            <div class="panel-header">
+                <h2>📊 Recursos del Sistema</h2>
+            </div>
+            <div class="panel-body">
+                <div class="resource-card" id="cpu-card">
+                    <div class="resource-icon">🖥️</div>
+                    <div class="resource-info">
+                        <h3>CPU</h3>
+                        <div id="cpu-status" class="cpu-status idle">Ociosa</div>
+                    </div>
+                </div>
+                <div class="resource-card" id="ram-card">
+                    <div class="resource-icon">💾</div>
+                    <div class="resource-info">
+                        <h3>RAM</h3>
+                        <div class="ram-bar-container">
+                            <div class="ram-bar" id="ram-bar" style="width: 0%"></div>
+                        </div>
+                        <div class="ram-text" id="ram-text">0 / 4096 MB (0%)</div>
+                    </div>
+                </div>
+                <div class="resource-card" id="scheduler-card">
+                    <div class="resource-icon">📋</div>
+                    <div class="resource-info">
+                        <h3>Scheduler</h3>
+                        <div id="scheduler-algo" class="scheduler-name">—</div>
+                        <div id="scheduler-queue" class="queue-count">En cola: 0</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Tablas de Procesos ──────────────────────────── -->
+        <section class="panel process-panel" id="process-panel">
+            <div class="panel-header">
+                <h2>📋 Tabla de Procesos</h2>
+                <div class="tab-bar">
+                    <button class="tab active" data-tab="all" onclick="switchTab('all')">Todos</button>
+                    <button class="tab" data-tab="ready" onclick="switchTab('ready')">Listos</button>
+                    <button class="tab" data-tab="waiting" onclick="switchTab('waiting')">Esperando</button>
+                    <button class="tab" data-tab="terminated" onclick="switchTab('terminated')">Terminados</button>
+                </div>
+            </div>
+            <div class="panel-body">
+                <table id="process-table">
+                    <thead>
+                        <tr>
+                            <th>PID</th>
+                            <th>Estado</th>
+                            <th>Prioridad</th>
+                            <th>RAM</th>
+                            <th>Progreso CPU</th>
+                            <th>Salida</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="process-tbody">
+                        <tr class="empty-row">
+                            <td colspan="7">Sin procesos registrados</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ── Panel de Logs ───────────────────────────────── -->
+        <section class="panel log-panel" id="log-panel">
+            <div class="panel-header">
+                <h2>📜 Event Log</h2>
+                <button class="btn btn-small" onclick="clearLogs()">Limpiar</button>
+            </div>
+            <div class="panel-body">
+                <div id="log-container" class="log-container"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
