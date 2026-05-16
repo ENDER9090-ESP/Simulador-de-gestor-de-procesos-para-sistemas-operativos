@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SimuladorGestorProcesos")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+53145dbae46b3fcdf632780293b98bf1b98cfba0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7c59b4239f6c77466ae2f3da3d7796a0b6c4e6b3")]
 [assembly: System.Reflection.AssemblyProductAttribute("SimuladorGestorProcesos")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SimuladorGestorProcesos")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
