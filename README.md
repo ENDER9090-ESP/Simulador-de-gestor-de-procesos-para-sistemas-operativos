@@ -7,7 +7,7 @@ gestión de memoria RAM, algoritmos de planificación de CPU y sincronización d
 
 * **Materia:** Sistemas Operativos
 * **Institución:** Universidad Autónoma de Tamaulipas (UAT)
-* **Semestre:** 2026-1
+* **Semestre:** 6th
 * **Profesor:** Muñoz Quintero Dante Adolfo
 
 ## Integrantes del Equipo
