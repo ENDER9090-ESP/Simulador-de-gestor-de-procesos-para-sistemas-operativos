@@ -11,12 +11,9 @@ gestión de memoria RAM, algoritmos de planificación de CPU y sincronización d
 * **Profesor:** Muñoz Quintero Dante Adolfo
 
 ## Integrantes del Equipo
-
-| Nombre | Rol / Contribución Principal |
-| :--- | :--- |
-| **Francisco Mogollón, Jose Antonio** | Arquitectura del núcleo (ASP.NET Core), diseño del Dashboard Web interactivo y motor de eventos (Logger). |
-| **Flores Cabrera, Gerardo** | Implementación y alternancia dinámica de algoritmos de planificación de CPU (FCFS, SJF, RR, Prioridades). |
-| **Mendoza Gómez, Gerardo Agustín** | Gestión centralizada de recursos (RAM) y módulos de Comunicación Interprocesos (IPC - Mutex y Buffers). |
+| **Francisco Mogollón, Jose Antonio** |
+| **Flores Cabrera, Gerardo** | 
+| **Mendoza Gómez, Gerardo Agustín** | 
 
 ---
 
